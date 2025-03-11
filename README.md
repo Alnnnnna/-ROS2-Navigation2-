@@ -81,3 +81,4 @@ ros2 launch autopatrol_robot autopatrol.launch.py
 ## 3.作者
 
 - [AlanLiu]
+- [Fishros]

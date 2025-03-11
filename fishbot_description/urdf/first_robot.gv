@@ -1,0 +1,11 @@
+digraph G {
+node [shape=box];
+"base_link" [label="base_link"];
+"imu_down_link" [label="imu_down_link"];
+"imu_up_link" [label="imu_up_link"];
+node [shape=ellipse, color=blue, fontcolor=blue];
+"base_link" -> "imu_down_joint" [label="xyz: 0 0 -0.03 \nrpy: 0 -0 0"]
+"imu_down_joint" -> "imu_down_link"
+"base_link" -> "imu_up_joint" [label="xyz: 0 0 0.03 \nrpy: 0 -0 0"]
+"imu_up_joint" -> "imu_up_link"
+}

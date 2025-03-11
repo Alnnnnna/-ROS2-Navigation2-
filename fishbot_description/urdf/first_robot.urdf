@@ -1,0 +1,47 @@
+<?xml version="1.0"?>
+<robot name="first_robot">
+    <!-- RB's Body -->
+    <link name="base_link">
+        <!--PARTS APPEARENCE  -->
+        <visual>
+            <!-- IN ITS GEOMETRIC CENTER TRANSLATION AND ROTATION -->
+            <origin xyz="0.0 0.0 0.0" rpy="0.0 0.0 0.0"/>
+            <geometry>
+                <!-- CYLINDER HERE! RADIUS = 0.1M HEIGHT: 0.12M -->
+                <cylinder radius="0.10" length="0.12"/>
+            </geometry>
+            <material name = "white">
+                <color rgba="1.0 1.0 1.0 0.5"/>
+            </material>
+        </visual>
+    </link>
+
+    <!-- HERE IS SENSOR -->
+    <link name="imu_link">
+        <!--PARTS APPEARENCE  -->
+        <visual>
+            <!-- IN ITS GEOMETRIC CENTER TRANSLATION AND ROTATION -->
+            <origin xyz="0.0 0.0 0.0" rpy="0.0 0.0 0.0"/>
+            <geometry>
+                <!-- CYLINDER HERE! RADIUS = 0.1M HEIGHT: 0.12M -->
+                <box size="0.02 0.02 0.02"/>
+            </geometry>
+            <material name = "black">
+                <color rgba="0.0 0.0 0.0 0.5"/>
+            </material>
+        </visual>
+    </link>
+
+
+    <!-- COMPRESS TOGETHER -->
+    <joint name="imu_joint" type="fixed">
+        
+        <parent link="base_link"/>
+        <child link="imu_link"/>
+        <origin xyz="0.0 0.0 0.03" rpy="0.0 0.0 0.0"/>
+    </joint>
+
+    
+
+
+</robot>
